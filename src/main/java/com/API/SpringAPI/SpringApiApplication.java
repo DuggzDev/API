@@ -1,6 +1,7 @@
 package com.API.SpringAPI;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-
+ 
 
 @SpringBootApplication
 @RestController
@@ -57,7 +58,7 @@ public class SpringApiApplication {
 		Customer customer = new Customer();
 		customer.setName(request.name());
 		customer.setEmail(request.email());
-		customer.setAge(request.age());
+		customer.setAge(new Random().nextInt(100));
 		customerRespository.save(customer);
 	}
 

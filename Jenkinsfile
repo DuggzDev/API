@@ -1,6 +1,6 @@
 pipeline{
     agent any
-        properties([   
+        options([   
             parameters([
                 booleanParam( defaultValue: true, description: '', name: 'Build_Now')
             ])])

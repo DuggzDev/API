@@ -1,11 +1,10 @@
 pipeline{
     agent any
-    
-    parameters([
-        booleanParam(
-            defaultValue: true, description: '', name: 'Build_Now'
-        )
-    ])
+        properties([   
+            parameters([
+                booleanParam( defaultValue: true, description: '', name: 'Build_Now')
+            ])])
+ 
     
     stages{
         stage("Running Spring Application"){

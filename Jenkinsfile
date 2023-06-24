@@ -16,6 +16,20 @@ pipeline{
                         bat "start cmd.exe"
 
                         bat "mvn spring-boot:run"
+
+                        def userinput = input (id:'User_Input', message:"Do you want to end the pipeline?",
+                        parameters: [
+                            [$class: 'ChoiceParameterDefinition',
+                             choices: ['N','Y'].join('\n'),
+                             name: 'input',
+                             description: 'Menu - select box option']
+                         ])
+                         if("${User_Input}" == "Y"){
+                            error 'Pipeline is now ending...'
+                         }
+                         else{
+                            echo 'pipeline is continuning.'
+                         }
                         }
                     }
                 }

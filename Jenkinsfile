@@ -24,7 +24,7 @@ pipeline{
                              name: 'input',
                              description: 'Menu - select box option']
                          ])
-                         if("${User_Input}" == "Y"){
+                         if("${userinput}" == "Y"){
                             error 'Pipeline is now ending...'
                          }
                          else{

@@ -1,9 +1,8 @@
 pipeline{
     agent any
-        options
-        {
-            parameters([ booleanParam( defaultValue: true, description: '', name: 'Build_Now')])
-        }   
+    
+    parameters{ booleanParam( defaultValue: true, description: '', name: 'Build_Now')}
+          
  
     
     stages{

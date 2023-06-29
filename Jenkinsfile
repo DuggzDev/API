@@ -17,13 +17,14 @@ pipeline{
 
                         bat "mvn spring-boot:run"
 
-                        def userinput = input (id:'User_Input', message:"Do you want to end the pipeline?",
+                        def userinput = input message:"Do you want to end the pipeline?",
                         parameters: [
                             [$class: 'ChoiceParameterDefinition',
                              choices: ['N','Y'].join('\n'),
                              name: 'input',
                              description: 'Menu - select box option']
-                         ])
+                         ]
+                         
                          if("${userinput}" == 'Y'){
                             error 'Pipeline is now ending...'
                          }

@@ -1,5 +1,5 @@
 pipeline{
-    agent any
+    agent {label 'agent1'}
     
     parameters{ booleanParam( defaultValue: true, description: '', name: 'Build_Now')}
           
@@ -17,21 +17,22 @@ pipeline{
 
                         bat "mvn spring-boot:run"
 
-                        def userinput = input message:"Do you want to end the pipeline?",
+                        
+                        }
+                        def userinput = input message: "Do you want to end the pipeline?",
                         parameters: [
                             [$class: 'ChoiceParameterDefinition',
                              choices: ['N','Y'].join('\n'),
                              name: 'input',
                              description: 'Menu - select box option']
                          ]
-                         
+
                          if("${userinput}" == 'Y'){
                             error 'Pipeline is now ending...'
                          }
                          else{
                             echo 'pipeline is continuning.'
                          }
-                        }
                     }
                 }
             }

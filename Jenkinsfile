@@ -24,7 +24,7 @@ pipeline{
                              name: 'input',
                              description: 'Menu - select box option']
                          ])
-                         if("${userinput}" == "Y"){
+                         if("${userinput}" == 'Y'){
                             error 'Pipeline is now ending...'
                          }
                          else{
@@ -36,7 +36,7 @@ pipeline{
             }
             post{
                 always{
-                    CleanWS()
+                    cleanWS()
                 }
             }
         }

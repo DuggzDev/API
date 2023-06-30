@@ -9,7 +9,7 @@ pipeline{
     stages{
         stage("Running Spring Application"){
             steps{
-               
+                 
                 script{
                     if (params.Build_Now == true){
                     // dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){
@@ -20,9 +20,11 @@ pipeline{
 
                         
                     //     }
+                    sh '''#!/bin/bash
                         dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
                             sh "mvn spring-boot:run"
                         }
+                    '''
                         def inputm = input message: 'Want to end the pipeline?',
                         parameters: [booleanParam(name: 'EndPipeline', defaultValue: false)]
 
@@ -35,6 +37,7 @@ pipeline{
 
                     }
                 }
+            
             }
             // post{
             //     always{

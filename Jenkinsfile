@@ -22,7 +22,7 @@ pipeline{
                     //     }
                     sh '''#!/bin/bash
                         dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
-                            sh "mvn spring-boot:run"
+                             "mvn spring-boot:run"
                         }
                     '''
                         def inputm = input message: 'Want to end the pipeline?',

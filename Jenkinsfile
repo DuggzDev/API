@@ -20,7 +20,7 @@ pipeline{
 
                         
                     //     }
-                    sh 'pwd'
+                    sh "${pwd}"
                         def inputm = input message: 'Want to end the pipeline?',
                         parameters: [booleanParam(name: 'EndPipeline', defaultValue: false)]
 

@@ -20,8 +20,8 @@ pipeline{
 
                         
                     //     }
-                    echo 'pwd'
-                        def inputm = input message: 'Want to end the pipeline?', ok: 'Yes',
+                    sh 'pwd'
+                        def inputm = input message: 'Want to end the pipeline?',
                         parameters: [booleanParam(name: 'EndPipeline', defaultValue: false)]
 
                         if(params.EndPipeline == true){

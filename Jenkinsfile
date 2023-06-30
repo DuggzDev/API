@@ -20,20 +20,16 @@ pipeline{
 
                         
                         }
-                        def userinput = input message: "Do you want to end the pipeline?",
-                        parameters: [
-                            [$class: 'ChoiceParameterDefinition',
-                             choices: ['N','Y'].join('\n'),
-                             name: 'input',
-                             description: 'Menu - select box option']
-                         ]
+                        def inputm = input message: 'Want to end the pipeline?', ok: 'Yes',
+                        parameters: [booleanParam(name: 'EndPipeline', defaultValue: false)]
 
-                         if("${userinput}" == 'Y'){
-                            error 'Pipeline is now ending...'
-                         }
-                         else{
-                            echo 'pipeline is continuning.'
-                         }
+                        if(params.EndPipeline == true){
+                            error "Pipeline Stopped"
+                        }
+                        else{
+                            echo 'countinuing'
+                        }
+
                     }
                 }
             }

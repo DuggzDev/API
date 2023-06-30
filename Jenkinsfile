@@ -14,7 +14,7 @@ pipeline{
                     if (params.Build_Now == true){
                     dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){
 
-                        sh "start cmd.exe"
+                        //sh "start cmd.exe"
 
                         sh "mvn spring-boot:run"
 

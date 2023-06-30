@@ -12,14 +12,15 @@ pipeline{
                
                 script{
                     if (params.Build_Now == true){
-                    dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){
+                    // dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){
 
-                        //sh "start cmd.exe"
+                    //     //sh "start cmd.exe"
 
-                        sh "mvn spring-boot:run"
+                    //     sh "mvn spring-boot:run"
 
                         
-                        }
+                    //     }
+                    echo 'pwd'
                         def inputm = input message: 'Want to end the pipeline?', ok: 'Yes',
                         parameters: [booleanParam(name: 'EndPipeline', defaultValue: false)]
 

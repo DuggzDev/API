@@ -20,7 +20,7 @@ pipeline{
 
                         
                     //     }
-                        sh "${env.workspace}"
+                        echo "${env.workspace}"
                         def inputm = input message: 'Want to end the pipeline?',
                         parameters: [booleanParam(name: 'EndPipeline', defaultValue: false)]
 

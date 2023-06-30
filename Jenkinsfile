@@ -1,6 +1,6 @@
 pipeline{
-    // agent {label 'agent1'}
-    agent any
+    agent {label 'agent1'}
+    
     
     parameters{ booleanParam( defaultValue: true, description: '', name: 'Build_Now')}
           
@@ -14,9 +14,9 @@ pipeline{
                     if (params.Build_Now == true){
                     dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){
 
-                        bat "start cmd.exe"
+                        sh "start cmd.exe"
 
-                        bat "mvn spring-boot:run"
+                        sh "mvn spring-boot:run"
 
                         
                         }

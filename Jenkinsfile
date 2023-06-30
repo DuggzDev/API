@@ -1,5 +1,6 @@
 pipeline{
-    agent {label 'agent1'}
+    // agent {label 'agent1'}
+    agent any
     
     parameters{ booleanParam( defaultValue: true, description: '', name: 'Build_Now')}
           

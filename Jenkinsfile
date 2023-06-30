@@ -20,7 +20,9 @@ pipeline{
 
                         
                     //     }
-                        echo "${env.workspace}"
+                        dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
+                            
+                        }
                         def inputm = input message: 'Want to end the pipeline?',
                         parameters: [booleanParam(name: 'EndPipeline', defaultValue: false)]
 

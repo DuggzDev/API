@@ -21,10 +21,11 @@ pipeline{
 
                         
                     //     }
-                        "#!/bin/sh"
+                        sh ''' #!/bin/sh
                         dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
-                             sh "sh mvn spring-boot:run"
+                              "sh mvn spring-boot:run"
                         }
+                        '''
                     
                         def inputm = input message: 'Want to end the pipeline?',
                         parameters: [booleanParam(name: 'EndPipeline', defaultValue: false)]

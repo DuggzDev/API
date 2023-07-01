@@ -1,3 +1,4 @@
+
 pipeline{
     agent {label 'agent1'}
     
@@ -20,7 +21,7 @@ pipeline{
 
                         
                     //     }
-                    
+                        #!/bin/sh
                         dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
                              sh "sh mvn spring-boot:run"
                         }

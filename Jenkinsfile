@@ -21,7 +21,7 @@ pipeline{
 
                         
                     //     }
-                        sh ''' #!/bin/sh
+                        sh ''' #!/bin/bash
                         dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
                               "mvn spring-boot:run"
                         }

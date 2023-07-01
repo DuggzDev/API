@@ -10,7 +10,7 @@ pipeline{
     stages{
         stage("Running Spring Application"){
             steps{
-                 
+              
                 script{
                     if (params.Build_Now == true){
                     // dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){
@@ -21,9 +21,9 @@ pipeline{
 
                         
                     //     }
-                        sh ''' #!/bin/bash
-
-                            sh 'echo hii'
+                        sh ''' #!/usr/bin/bash
+                        dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
+                              "mvn spring-boot:run"
                         }
                         '''
                     

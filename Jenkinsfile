@@ -23,7 +23,7 @@ pipeline{
                     //     }
                         
                         dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
-                              bat(returnStdout: true, script: "sh -x -c mvn spring-boot:run")
+                             sh"sh mvn spring-boot:run"
                         }
                         
                     

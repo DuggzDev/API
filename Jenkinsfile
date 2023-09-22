@@ -1,6 +1,10 @@
 
 pipeline{
-    agent {label 'agent1'}
+    agent {
+        docker{
+
+        }
+    }
     
     
     parameters{ booleanParam( defaultValue: true, description: '', name: 'Build_Now')}
@@ -13,6 +17,10 @@ pipeline{
               
                 script{
                     if (params.Build_Now == true){
+                        def customImageName = 'my-custom-image:latest' // Set your desired image name and tag
+
+                    // Build the Docker image using the Dockerfile in your project directory
+                        docker.build(customImageName, "-f Dockerfile .")
                     // dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){
 
                     //     //sh "start cmd.exe"
@@ -22,16 +30,18 @@ pipeline{
                         
                     //     }
                         
-                        dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
+                        //dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
                              sh"sh mvn spring-boot:run"
-                        }
+                        //}
                         
                     
                         def inputm = input message: 'Want to end the pipeline?',
                         parameters: [booleanParam(name: 'EndPipeline', defaultValue: false)]
 
                         if(params.EndPipeline == true){
-                            error "Pipeline Stopped"
+                            options{
+                                timeout(time: 1, unit:'SECONDS')
+                            }
                         }
                         else{
                             echo 'countinuing'

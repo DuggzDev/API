@@ -19,7 +19,7 @@ pipeline{
                         def customImageName = 'C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\Dockerfile' // Set your desired image name and tag
 
                     // Build the Docker image using the Dockerfile in your project directory
-                        docker.build("-f ${customImageName} .")
+                        //docker.build("-f ${customImageName} .")
                     // dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){
 
                     //     //sh "start cmd.exe"

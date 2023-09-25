@@ -1,10 +1,7 @@
 
 pipeline{
-    agent {
-        dockerfile{
-            filename 'Dockerfile.build'
-        }
-    }
+    agent {any}
+    
     
     
     parameters{ booleanParam( defaultValue: true, description: '', name: 'Build_Now')}

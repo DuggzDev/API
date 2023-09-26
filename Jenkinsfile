@@ -1,8 +1,9 @@
 
 pipeline{
-    agent {
-        dockerfile true
-    }
+    // agent {
+    //     dockerfile true
+    // }
+    agent {any}
     
     
     
@@ -16,8 +17,7 @@ pipeline{
               
                 script{
                     if (params.Build_Now == true){
-                        def customImageName = 'C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\Dockerfile' // Set your desired image name and tag
-
+                        bat "docker --version"
                     // Build the Docker image using the Dockerfile in your project directory
                         //docker.build("-f ${customImageName} .")
                     // dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){

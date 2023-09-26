@@ -3,7 +3,7 @@ pipeline{
     // agent {
     //     dockerfile true
     // }
-    agent {any}
+    agent any
     
     
     

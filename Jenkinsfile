@@ -4,7 +4,7 @@ pipeline{
     //     dockerfile true
     // }
     agent {
-        docker { image 'alpine:latest' }
+        docker { image 'alpine:latest'}
     }
     
     

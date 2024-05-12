@@ -18,7 +18,7 @@ pipeline{
               
                 script{
                     if (params.Build_Now == true){
-                        bat "docker --version"
+                        sh "docker --version"
                     // Build the Docker image using the Dockerfile in your project directory
                         //docker.build("-f ${customImageName} .")
                     // dir("C:\\Users\\james\\Documents\\Coding\\Spring\\SpringBootAPI\\API\\"){
@@ -31,7 +31,7 @@ pipeline{
                     //     }
                         
                         //dir ("${env.workspace}/src/main/java/com/API/SpringAPI/"){
-                             sh"sh mvn spring-boot:run"
+                             sh "sh mvn spring-boot:run"
                         //}
                         
                     

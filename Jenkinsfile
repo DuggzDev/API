@@ -3,8 +3,10 @@ pipeline{
     // agent {
     //     dockerfile true
     // }
-    //agent {dockerContainer {image 'alpine:latest'}}
-    agent any
+    agent {
+        docker { image 'alpine:latest' }
+    }
+    
     
     
     

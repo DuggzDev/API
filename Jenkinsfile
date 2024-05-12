@@ -4,6 +4,7 @@ pipeline{
     //     dockerfile true
     // }
     //agent {dockerContainer {image 'alpine:latest'}}
+    agent {any}
     
     
     
